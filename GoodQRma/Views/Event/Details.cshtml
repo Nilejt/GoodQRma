@@ -7,7 +7,7 @@
 
 <h2>@Html.DisplayFor(model => model.name)</h2>
 <div class="fb-share-button "
-     data-href="http://www.goodqrma.azurewebsites/Edit/Details/@Model.eventID"
+     data-href="http://goodqrma.azurewebsites.net/Event/Details/@Model.eventID"
      data-layout="button_count">
 </div>
 
@@ -249,7 +249,7 @@
     <title>GoodQRma</title>
     <!-- You can use open graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url" content="http://www.goodqrma.azurewebsites.net" />
+    <meta property="og:url" content="http://goodqrma.azurewebsites.net/event/details/@Model.eventID" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@Model.name" />
     <meta property="og:description" content="@Model.description" />
@@ -267,13 +267,7 @@
             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-    <center>
-        <!-- Your share button code -->
-        <div class="fb-share-button"
-             data-href="http://www.goodqrma.azurewebsites/Edit/Details/@Model.eventID"
-             data-layout="button_count">
-        </div>
-    </center>
+    
 </body>
 </html>
 
