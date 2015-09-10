@@ -51,10 +51,8 @@ namespace GoodQRma.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                events = events.Where(v => v.name.Contains(searchString));
-                events1= events.Where(v => v.eventType.Contains(searchString));
-
-                events.Union(events1);
+                events1 = events.Where(v => v.eventType.Contains(searchString));
+                events = events.Where(v => v.name.Contains(searchString)).Union(events1);
 
             }
 

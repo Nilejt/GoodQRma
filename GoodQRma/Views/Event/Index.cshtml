@@ -97,7 +97,7 @@
     @using (Html.BeginForm("Index", "Event", FormMethod.Get))
     {
     <p>
-        Search Event Types: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        Search Events: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
         <input type="submit" value="Search" />
     </p>
     }
