@@ -5,18 +5,17 @@
     ViewBag.Title = "EventPoster";
 }
 
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=http://goodqrma.azurewebsites.net/Event/Details/@Model.eventID" />*
-
+<br />
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=http://goodqrma.azurewebsites.net/Event/Details/@Model.eventID" />
+<br />Scan For More Info
 <h1>@Model.name</h1><br />
 
 <h2>@Model.description</h2><br />
 
+<h2>@Model.eventDate.ToShortDateString() @Model.eventTime.ToShortTimeString()</h2>
 
-<h2>@Model.eventDate</h2><br />
-
-
-<h2>@Model.address1</h2><br />
+<h2>@Model.address1</h2>
+<h2>@Model.city, @Model.state</h2><br />
 
 <h2>@Model.contact</h2> 
 
