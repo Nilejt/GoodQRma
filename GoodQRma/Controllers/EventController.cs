@@ -46,9 +46,15 @@ namespace GoodQRma.Controllers
             var events = from v in db.Events
                          select v;
 
+            var events1 = from v in db.Events
+                         select v;
+
             if (!string.IsNullOrEmpty(searchString))
             {
-                events = events.Where(v => v.eventType.Contains(searchString));
+                events = events.Where(v => v.name.Contains(searchString));
+                events1= events.Where(v => v.eventType.Contains(searchString));
+
+                events.Union(events1);
 
             }
 
