@@ -22,7 +22,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script>
         var list1 = [];
-        var bounds = new google.maps.LatLng();
+        //var bounds = new google.maps.LatLng();
         function listToArray() {
             @foreach(var x in addresses)
         {
@@ -35,17 +35,17 @@
         var map;
         function initialize() {
             geocoder = new google.maps.Geocoder();
-            var latlng = new google.maps.LatLng(42.3314, -83.0458);
+            //var latlng = new google.maps.LatLng(42.3314, -83.0458);
             var mapOptions = {
                 zoom: 10,
-                center: latlng,
+                //center: latlng,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
             setMarkers();
 
-            var bounds = new google.maps.LatLngBounds();
-            map.fitBounds(bounds);
+            //var bounds = new google.maps.LatLngBounds();
+            //map.fitBounds(bounds);
             var infoWindow = new google.maps.InfoWindow({ map: map });
             // Try HTML5 geolocation.
             if (navigator.geolocation) {
@@ -56,7 +56,14 @@
                     };
                     infoWindow.setPosition(pos);
                     infoWindow.setContent('You Are Here.');
+                    
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: (pos),
+                        animation: google.maps.Animation.BOUNCE
+                    });
                     map.setCenter(pos);
+
                 }, function () {
                     handleLocationError(true, infoWindow, map.getCenter());
                 });
@@ -69,7 +76,7 @@
             for (var i = 0; i < list1.length; i++) {
                 geocoder.geocode({ 'address': list1[i] }, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
-                        map.setCenter(results[0].geometry.location);
+                        //map.setCenter(results[0].geometry.location);
                         //alert(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,

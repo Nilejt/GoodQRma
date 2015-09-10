@@ -150,7 +150,7 @@ namespace GoodQRma.Controllers
         }
 
 
-        [AllowAnonymous]
+        [Authorize(Roles="Member")]
         public ActionResult UserProfile(ApplicationUser model) 
         {
 
